@@ -1,6 +1,6 @@
 #include "../includes/Player.hpp"
 #include "../includes/Checker.hpp"
-#include "../includes/Dictionary.hpp"
+#include "main.hpp"
 
 void test_word(void)
 {
@@ -26,7 +26,7 @@ void test_orchestror(void)
 	
 	num_words = orchestror.init(WORDS_FILEPATH);
 	if (num_words == -1)
-		return (1);
+		return ;
 	
 	random_number = orchestror.generate_number(num_words);
 	chosen_word = orchestror.generate_word(WORDS_FILEPATH, random_number);

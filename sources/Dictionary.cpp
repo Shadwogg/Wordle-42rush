@@ -6,11 +6,12 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 18:23:52 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:28:57 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Dictionary.hpp"
+# include "Player.hpp"
 
 Dictionary::Dictionary(std::string filename) : _filename(filename){
 	std::cout << "Init with " << filename << std::endl;
@@ -38,8 +39,8 @@ int	Dictionary::parse(void)
 	std::string line;
 	while (getline(file, line))
 	{
-		if (isValid(line))
-			_dict.add(new Word(line));
+		if (Player::is_word_valid(line))
+			_dict.push_back(new Word(line));
 		else{
 			std::cerr << "Error, line" << x << " not valid" << std::endl;
 			return (-1);
@@ -51,5 +52,6 @@ int	Dictionary::parse(void)
 }
 
 bool	Dictionary::doesWordExists(Word x){
+	(void)x;
 	return (false);
 }
