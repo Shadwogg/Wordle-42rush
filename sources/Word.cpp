@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   Word.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:29:47 by ggiboury          #+#    #+#             */
 /*   Updated: 2025/04/15 19:00:19 by ggiboury         ###   ########.fr       */

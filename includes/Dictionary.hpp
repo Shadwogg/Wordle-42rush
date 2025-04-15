@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   Dictionary.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:26 by ggiboury          #+#    #+#             */
 /*   Updated: 2025/04/15 19:59:07 by ggiboury         ###   ########.fr       */

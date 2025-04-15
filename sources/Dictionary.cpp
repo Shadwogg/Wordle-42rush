@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   Dictionary.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
 /*   Updated: 2025/04/15 19:59:12 by ggiboury         ###   ########.fr       */
@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 # include "Dictionary.hpp"
+# include "Player.hpp"
 
 Dictionary::Dictionary()
 {}
@@ -45,24 +46,16 @@ int	Dictionary::parse(std::ifstream &file)
 {
 	std::string	line;
 
-	while (std::getline(file, line))
+	int x = 0;
+	while (getline(file, line))
 	{
-		if (line.length() != WORD_LENGTH)
-		{
-			std::cerr << "Error: bad file format" << std::endl;
-			file.close();
-			return (-1);
-		}
-		for (int i = 0; i < WORD_LENGTH; i++)
-		{
-			if (!std::isalpha(line[i]))
-			{
-				std::cerr << "Error: bad file format" << std::endl;
-				file.close();
-				return (-1);
-			}
-		}
-		_dict.insert(Word(line));
+		if (Checker::is_word_valid(line))
+			_dict.insert(Word(line));
+		else{
+			std::cerr << "Error, line" << x << " not valid" << std::endl;
+      file.close();
+      return (-1);
+    }
 	}
 	file.close();
 	return (0);
