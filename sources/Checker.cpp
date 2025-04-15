@@ -1,4 +1,4 @@
-#include "../includes/Checker.hpp"
+#include "Checker.hpp"
 
 bool Checker::is_answer_found(Word* word1, Word word2)
 {
