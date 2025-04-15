@@ -12,7 +12,6 @@
 
 # include "Dictionary.hpp"
 
-
 Dictionary::Dictionary(std::string filename) : _filename(filename){
 	std::cout << "Init with " << filename << std::endl;
 }

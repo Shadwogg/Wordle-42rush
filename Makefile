@@ -2,8 +2,8 @@ NAME = wordle
 
 COMPILATOR = c++
 
-CFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3
-OFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3
+CFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3 -fsanitize=leak,address,undefined,integer,null,float-divide-by-zero
+OFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3 -fsanitize=leak,address,undefined,integer,null,float-divide-by-zero
 
 FILES = main \
 		Checker \
