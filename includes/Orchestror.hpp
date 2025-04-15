@@ -22,7 +22,7 @@ class Orchestror
 		int			init(std::string filepath);
 		int			generate_number(void);
 		std::string	generate_word(std::string filepath, int num_line);
-		//void		play(void);
+		void		play(void);
 };
 
 #endif

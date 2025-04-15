@@ -67,10 +67,11 @@ std::string	Orchestror::generate_word(std::string filepath, int num_line)
 	return (chosen_word);
 }
 
-/*void		Orchestror::play(void)
+void		Orchestror::play(void)
 {
+	std::cout << "Debut jeu" << std::endl;
 	return ;
-}*/
+}
 
 /*void		Orchestror::parse(void)
 {

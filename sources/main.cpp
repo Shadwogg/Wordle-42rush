@@ -47,16 +47,19 @@ void test_orchestror(void)
 
 int	main(void)
 {
-	Player p;
-	Word actual("bonjo");
-	if (p.read_input() == -1)
-		return -1;
-	if (Checker::is_answer_found(p.getCurrentWord(), actual))
-		std::cout << "YEAH" << std::endl;
+	// Player p;
+	// Word actual("bonjo");
+	// if (p.read_input() == -1)
+	// 	return -1;
+	// if (Checker::is_answer_found(p.getCurrentWord(), actual))
+	// 	std::cout << "YEAH" << std::endl;
 
-	test_orchestror();
+	// test_orchestror();
+	// test_word();
 
-	test_word();
+	Orchestror	orchestror;
 
+	if (!orchestror.init(WORDS_FILEPATH))
+		orchestror.play();
 	return (0);
 }
