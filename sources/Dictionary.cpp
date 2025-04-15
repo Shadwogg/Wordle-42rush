@@ -6,7 +6,7 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 19:28:57 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/15 19:37:16 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	Dictionary::parse(void)
 	std::string line;
 	while (getline(file, line))
 	{
-		if (Player::is_word_valid(line))
+		if (Checker::is_word_valid(line))
 			_dict.push_back(new Word(line));
 		else{
 			std::cerr << "Error, line" << x << " not valid" << std::endl;

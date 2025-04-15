@@ -4,6 +4,7 @@
 # include <iostream>
 # include <list>
 # include "Word.hpp"
+# include "Checker.hpp"
 
 class Player {
 	private:
@@ -14,7 +15,6 @@ class Player {
 		Player();
 		virtual ~Player();
 		int read_input();
-		static bool is_word_valid(std::string curr_word);
 		Word* getCurrentWord();
 };
 

@@ -39,7 +39,7 @@ void test_orchestror(void)
 int	main(void)
 {
 	Player p;
-	Word actual("bonjo");
+	Word actual("salut");
 	if (p.read_input() == -1)
 		return -1;
 	if (Checker::is_answer_found(p.getCurrentWord(), actual))
