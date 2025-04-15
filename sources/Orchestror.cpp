@@ -20,14 +20,14 @@ int			Orchestror::init(std::string filepath)
 		std::cerr << "Error opening file." << std::endl;
 		return (-1);
 	}
-	return (d.parse(word_file));
+	return (_d.parse(word_file));
 }
 
-int			Orchestror::generate_number(unsigned int max)
+int			Orchestror::generate_number(void)
 {
     unsigned long						seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::minstd_rand					generator(seed);
-    std::uniform_int_distribution<int>	distribution(0, max);
+    std::uniform_int_distribution<int>	distribution(0, _d.getSize());
 
     return distribution(generator);
 }

@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:34:14 by lahlsweh          #+#    #+#             */
-/*   Updated: 2025/04/15 19:40:23 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:54:29 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void test_orchestror(void)
 	if (num_words == -1)
 		return ;
 	
-	random_number = orchestror.generate_number(num_words);
+	random_number = orchestror.generate_number();
 	chosen_word = orchestror.generate_word(WORDS_FILEPATH, random_number);
 
 	std::cout << "num_words in file : " << num_words << std::endl;

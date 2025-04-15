@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:26 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 19:39:32 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:59:07 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,15 @@ class Dictionary
 		Dictionary();
 		~Dictionary(void);
 
-		int	parse(std::ifstream &file);
+		Word	getWord(unsigned int pos);
+		unsigned int	getSize(void) const;
 
 		// Returns true if the word is in the dictionary
 		bool	doesWordExists(Word x);
+
+		int	parse(std::ifstream &file);
+
+
 };
 
 # endif

@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 19:39:56 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:59:12 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,24 @@ Dictionary::Dictionary()
 Dictionary::~Dictionary(void)
 {
 
+}
+
+// Assumes pos is valid
+Word	Dictionary::getWord(unsigned int pos)
+{
+	std::set<Word>::iterator begin(_dict.begin()), end(_dict.end());
+	while (pos > 0 && begin != end)
+	{
+		pos--;
+		begin++;
+	}
+	// if (begin == end) => err
+	return (*begin);
+}
+
+unsigned int	Dictionary::getSize(void) const
+{
+	return (_dict.size());
 }
 
 /**

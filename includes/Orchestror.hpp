@@ -13,14 +13,14 @@ class Orchestror
 {
 	private:
 		// Player	p;
-		Dictionary d;
+		Dictionary _d;
 
 	public:
 		Orchestror(void);
 		~Orchestror(void);
 	
 		int			init(std::string filepath);
-		int			generate_number(unsigned int max);
+		int			generate_number(void);
 		std::string	generate_word(std::string filepath, int num_line);
 		//void		play(void);
 };
