@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 17:02:08 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 17:10:06 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 
 Dictionary::Dictionary(std::string filename){
-	(filename);'
+	std::istream	
+
+	(filename);
 }
 
 

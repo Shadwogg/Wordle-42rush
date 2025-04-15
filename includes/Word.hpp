@@ -6,10 +6,9 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:55:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 16:42:15 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 17:10:57 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef WORD_HPP
 # define WORD_HPP
@@ -29,6 +28,7 @@ class Word
 		enum Color _colors[5] = {empty, empty, empty, empty, empty};
 		
 	public:
+		Word(void);
 		Word(std::string);
 		~Word(void);
 			

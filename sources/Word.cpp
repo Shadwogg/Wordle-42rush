@@ -6,11 +6,16 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:29:47 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 16:44:07 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 17:12:56 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Word.hpp"
+
+Word::Word(void)
+{
+	_word = "     ";
+}
 
 Word::Word(std::string word) : _word(word)
 {}
