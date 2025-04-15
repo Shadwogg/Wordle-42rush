@@ -12,7 +12,7 @@
 class Orchestror
 {
 	private:
-		// Player	p;
+		Player	_p;
 		Dictionary _d;
 
 	public:
@@ -21,8 +21,8 @@ class Orchestror
 	
 		int			init(std::string filepath);
 		int			generate_number(void);
-		std::string	generate_word(std::string filepath, int num_line);
-		void		play(void);
+		std::string	generate_word(void);
+		int		play(void);
 };
 
 #endif

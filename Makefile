@@ -10,8 +10,10 @@ FILES = main \
 		Dictionary \
 		Orchestror \
 		Player \
-		TerminalView \
 		Word \
+		AView \
+		TerminalView \
+		GUIView
 
 SOURCES = $(foreach f, $(FILES), ./sources/$(f).cpp)
 OBJECTS = $(foreach f, $(FILES), ./objects/$(f).o)

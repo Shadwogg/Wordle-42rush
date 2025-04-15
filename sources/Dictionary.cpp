@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dictionary.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 19:59:12 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 21:04:58 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,15 @@ int	Dictionary::parse(std::ifstream &file)
 			_dict.insert(Word(line));
 		else{
 			std::cerr << "Error, line" << x << " not valid" << std::endl;
-      file.close();
-      return (-1);
-    }
+			file.close();
+			return (-1);
+		}
 	}
 	file.close();
 	return (0);
 }
 
-bool	Dictionary::doesWordExists(Word x){
+bool	Dictionary::doesWordExists(Word x)
+{
 	return (_dict.find(x) != _dict.end());
 }

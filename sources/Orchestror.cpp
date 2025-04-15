@@ -1,17 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Orchestror.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 21:05:25 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/04/15 21:24:50 by ggiboury         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Orchestror.hpp"
 
 Orchestror::Orchestror(void)
 {
-	return ;
 }
 
 Orchestror::~Orchestror(void)
 {
-	return ;
 }
 
 // Parse the input and initialize everything
-int			Orchestror::init(std::string filepath)
+int	Orchestror::init(std::string filepath)
 {
 	std::ifstream	word_file(filepath);
 
@@ -32,48 +42,42 @@ int			Orchestror::generate_number(void)
     return distribution(generator);
 }
 
-std::string	Orchestror::generate_word(std::string filepath, int num_line)
+std::string	Orchestror::generate_word()
 {
-	std::ifstream	word_file(filepath);
-	std::string		line;
-	int				num_words;
-	std::string		chosen_word;
+	// Maybe we should add things here, # subject to read again to be sure (same word for a day ?)
+	return (getWord(this.generate_number()));
+}
 
-	if (!word_file)
+int		Orchestror::play(void)
+{
+	AView	*currentView;
+	Word	goal_word;
+
+	// Selection du mode, par defaut terminalView
+	// NORMALEMENT JE DEVRAIS LE METTRE DAMS LE CONSTRUCTOR
+	if (0)
+		currentView = new GUIView();
+	else
+		currentView = new TerminalView();
+
+	std::cout << "(debug) Debut jeu" << std::endl;
+
+	// while (Player.isPlaying())
+	while (true)
 	{
-		std::cerr << "Error opening file." << std::endl;
-		return (chosen_word);
+		currentView.present();
+		goal_word = this->generate_word();
+		while (true)
+		{
+			if (_p.read_input() == -1) // until valid word
+				return (-1); // NOT SURE ABOUT THIS, WE SHOULD DELETE BEFORE ?
+			if (Checker::is_answer_found(_p.getCurrentWord(), goal_word))
+				currentView.printVictory();
+			else
+				currentView.printTable();
+		}
 	}
-	num_words = 0;
-	while (std::getline(word_file, line) && num_words < num_line - 1)
-	{
-		if (line.length() != WORD_LENGTH)
-		{
-			std::cerr << "Error: bad file format" << std::endl;
-			return (chosen_word);
-		}
-		for (int i = 0; i < WORD_LENGTH; i++)
-		{
-			if (!std::isalpha(line[i]))
-			{
-				std::cerr << "Error: bad file format" << std::endl;
-				return (chosen_word);
-			}
-		}
-		num_words++;
-	} 
-	chosen_word = line;
-	word_file.close();
-	return (chosen_word);
-}
+	std::cout << "(debug) FIN JEU" << std::endl;
 
-void		Orchestror::play(void)
-{
-	std::cout << "Debut jeu" << std::endl;
-	return ;
+	return (0);
 }
-
-/*void		Orchestror::parse(void)
-{
-	return ;
-}*/
