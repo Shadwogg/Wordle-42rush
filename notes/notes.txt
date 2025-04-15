@@ -1,0 +1,32 @@
+Class Orchestror
+init()
+generate_word()
+play() {while(...){player::read_input}}
+parse(filename) -> Dictionary::Parse
+
+Class Player
+Word current_word
+[container] tested_words
+[container] found_words
+read_input()
+bool is_word_valid(Word word)
+Word getCurrentWord()
+
+
+Class Dictionary
+parse()
+[container] Word words_data
+
+
+Class Word
+enum word_colours
+std::string word_value
+
+
+Class Checker
+bool is_answer_found(Word word1, Word word2)
+
+
+Class TerminalView
+print_table()
+print_line() ???
