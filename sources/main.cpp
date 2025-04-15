@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lahlsweh <lahlsweh@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 16:34:14 by lahlsweh          #+#    #+#             */
-/*   Updated: 2025/04/15 17:58:07 by lahlsweh         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "Orchestror.hpp"
-#include "main.hpp"
-
+#include "../includes/Player.hpp"
+#include "../includes/Checker.hpp"
+#include "../includes/Dictionary.hpp"
 
 void test_word(void)
 {
@@ -50,9 +38,11 @@ void test_orchestror(void)
 
 int	main(void)
 {
-  // test_orchestror();
-
-	// test_word();
-	// test_dictionary();
+	Player p;
+	Word actual("bonjo");
+	if (p.read_input() == -1)
+		return -1;
+	if (Checker::is_answer_found(p.getCurrentWord(), actual))
+		std::cout << "YEAH" << std::endl;
 	return (0);
 }
