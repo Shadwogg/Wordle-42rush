@@ -1,8 +1,6 @@
 #include "../includes/Player.hpp"
 #include "../includes/Checker.hpp"
-
-
-
+#include "../includes/Dictionary.hpp"
 
 void test_word(void)
 {

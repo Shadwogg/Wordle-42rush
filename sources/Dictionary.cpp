@@ -1,15 +1,12 @@
-<<<<<<< HEAD
-#include "Dictionary.hpp"
-=======
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Dictionary.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 17:47:51 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 18:24:56 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +46,3 @@ int	Dictionary::parse(void)
 	std::cout << "Lines : " << x << std::endl;
 	return (0);
 }
->>>>>>> origin/ggiboury

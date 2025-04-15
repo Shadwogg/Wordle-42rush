@@ -1,20 +1,12 @@
-<<<<<<< HEAD
-#ifndef CHECKER_HPP
-# define CHECKER_HPP
-
-#include "main.hpp"
-
-#endif
-=======
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Dictionary.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:26 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 17:47:37 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 18:25:02 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +35,3 @@ class Dictionary
 };
 
 # endif
->>>>>>> origin/ggiboury

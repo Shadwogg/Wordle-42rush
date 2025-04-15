@@ -1,15 +1,12 @@
-<<<<<<< HEAD
-#include "Word.hpp"
-=======
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Word.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:29:47 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 17:23:40 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 18:24:48 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +38,3 @@ void    Word::setColor(unsigned int pos, enum Color new_color){
 	if (pos < 5)
 		_colors[pos] = new_color;
 }
->>>>>>> origin/ggiboury
