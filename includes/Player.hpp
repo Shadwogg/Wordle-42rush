@@ -9,13 +9,14 @@
 class Player {
 	private:
 		Word* _current_word;
-		std::list <std::string> _tested_words;
+		std::list <Word*> _tested_words;
 		std::list <std::string> _found_words;
 	public:
 		Player();
 		virtual ~Player();
 		int read_input();
 		Word* getCurrentWord();
+		std::list <Word*> getTestedWords();
 };
 
 #endif

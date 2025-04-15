@@ -1,6 +1,7 @@
 #include "../includes/Player.hpp"
 #include "../includes/Checker.hpp"
 #include "main.hpp"
+#include "TerminalView.hpp"
 
 void test_word(void)
 {
@@ -40,9 +41,19 @@ int	main(void)
 {
 	Player p;
 	Word actual("salut");
-	if (p.read_input() == -1)
-		return -1;
-	if (Checker::is_answer_found(p.getCurrentWord(), actual))
-		std::cout << "YEAH" << std::endl;
+
+	for (int i = 0; i < 6; i++)
+	{
+		if (p.read_input() == -1)
+			return -1;
+		if (Checker::is_answer_found(p.getCurrentWord(), actual))
+		{
+			std::cout << "You just found the word: " << actual.getWord() << std::endl;
+			break;
+		}
+	}
+
+	TerminalView t;
+	t.print_table(p.getTestedWords());
 	return (0);
 }
