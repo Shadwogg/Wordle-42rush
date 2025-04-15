@@ -54,7 +54,7 @@ int	main(void)
 	if (Checker::is_answer_found(p.getCurrentWord(), actual))
 		std::cout << "YEAH" << std::endl;
 
-  test_orchestror();
+	test_orchestror();
 
 	test_word();
 

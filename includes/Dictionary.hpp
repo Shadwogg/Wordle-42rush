@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dictionary.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:26 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 19:59:07 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 20:19:44 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 # include <iostream>
 # include <set>
 
-# include "Word.hpp"
 # include "main.hpp"
+# include "Word.hpp"
+# include "Checker.hpp"
 
 
 class Dictionary
@@ -39,7 +40,6 @@ class Dictionary
 		bool	doesWordExists(Word x);
 
 		int	parse(std::ifstream &file);
-
 
 };
 
