@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:29:47 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 16:40:37 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:44:07 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,6 @@ Word::Word(std::string word) : _word(word)
 
 ~Word::Word(void)
 {}
-
-// // Checks wether the word has 
-// int Word::parse(void)
-// {
-//     if (_word.contains(""))
-//         return (-1);
-//     return (0);
-// }
 
 
 std::string	Word::getWord(void) const{

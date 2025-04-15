@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:55:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 16:40:57 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:42:15 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ class Word
 	public:
 		Word(std::string);
 		~Word(void);
-	
-		// int	parse(void);
-		
+			
 		std::string getWord(void) const;
 
 		enum Color[5]   getColor(void) const;
