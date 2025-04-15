@@ -4,6 +4,7 @@ COMPILATOR = c++
 
 CFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3 
 OFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3 
+
 FILES = main \
 		Checker \
 		Dictionary \

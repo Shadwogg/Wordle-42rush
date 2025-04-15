@@ -17,6 +17,25 @@ void test_dictionary(void)
 	t.parse();
 }
 
+void test_orchestror(void)
+{
+	Orchestror	orchestror;
+	int			num_words;
+	int			random_number;
+	std::string	chosen_word;
+	
+	num_words = orchestror.init(WORDS_FILEPATH);
+	if (num_words == -1)
+		return (1);
+	
+	random_number = orchestror.generate_number(num_words);
+	chosen_word = orchestror.generate_word(WORDS_FILEPATH, random_number);
+
+	std::cout << "num_words in file : " << num_words << std::endl;
+	std::cout << "    random number : " << random_number << std::endl;
+	std::cout << "      chosen_word : " << chosen_word  << std::endl;
+}
+
 int	main(void)
 {
 	Player p;
