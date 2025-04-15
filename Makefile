@@ -2,8 +2,14 @@ NAME = wordle
 
 COMPILATOR = c++
 
+<<<<<<< HEAD
 CFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3 
 OFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3 
+=======
+CFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3
+OFLAGS = -std=c++11 -Wall -Wextra -Werror -I./includes -pedantic -g3
+
+>>>>>>> origin/ggiboury
 FILES = main \
 		Checker \
 		Dictionary \
