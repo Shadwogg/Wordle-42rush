@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lahlsweh <lahlsweh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:34:14 by lahlsweh          #+#    #+#             */
-/*   Updated: 2025/04/15 17:58:07 by lahlsweh         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:40:23 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ void test_word(void)
 	std::cout << test.getColor(0) << std::endl;
 }
 
-void test_dictionary(void)
-{
-	std::cout << "Testing class Dictionary" << std::endl;
-	Dictionary t("words.txt");
-	t.parse();
-}
 
 void test_orchestror(void)
 {
@@ -38,7 +32,7 @@ void test_orchestror(void)
 	
 	num_words = orchestror.init(WORDS_FILEPATH);
 	if (num_words == -1)
-		return (1);
+		return ;
 	
 	random_number = orchestror.generate_number(num_words);
 	chosen_word = orchestror.generate_word(WORDS_FILEPATH, random_number);
@@ -50,9 +44,8 @@ void test_orchestror(void)
 
 int	main(void)
 {
-  // test_orchestror();
+  test_orchestror();
 
-	// test_word();
-	// test_dictionary();
+	test_word();
 	return (0);
 }

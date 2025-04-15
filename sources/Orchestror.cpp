@@ -10,37 +10,17 @@ Orchestror::~Orchestror(void)
 	return ;
 }
 
+// Parse the input and initialize everything
 int			Orchestror::init(std::string filepath)
 {
 	std::ifstream	word_file(filepath);
-	std::string		line;
-	int				num_words;
 
 	if (!word_file)
 	{
 		std::cerr << "Error opening file." << std::endl;
 		return (-1);
 	}
-	num_words = 0;
-	while (std::getline(word_file, line))
-	{
-		if (line.length() != WORD_LENGTH)
-		{
-			std::cerr << "Error: bad file format" << std::endl;
-			return (-1);
-		}
-		for (int i = 0; i < WORD_LENGTH; i++)
-		{
-			if (!std::isalpha(line[i]))
-			{
-				std::cerr << "Error: bad file format" << std::endl;
-				return (-1);
-			}
-		}
-		num_words++;
-	}
-	word_file.close();
-	return (num_words);
+	return (d.parse(word_file));
 }
 
 int			Orchestror::generate_number(unsigned int max)
