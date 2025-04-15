@@ -6,36 +6,40 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:55:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 17:10:57 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 17:26:06 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WORD_HPP
 # define WORD_HPP
 
+# include <string>
+# include <iostream>
+
 /*
 Green : good letter at the right place
 Yellow : Good letter at the wrong place
-grey : Wrong letter
+Grey : Wrong letter
 */
-enum Color {empty = 0, green, yellow, grey};
+enum Color {EMPTY = 0, GREEN, YELLOW, GREY};
 
 
 class Word
 {
 	private:
 		std::string const _word;
-		enum Color _colors[5] = {empty, empty, empty, empty, empty};
+		enum Color _colors[5] = {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY};
 		
 	public:
 		Word(void);
 		Word(std::string);
 		~Word(void);
 			
-		std::string getWord(void) const;
+		std::string const &getWord(void) const;
 
-		enum Color[5]   getColor(void) const;
-		void    setColor(unsigned int pos, enum Color[5] colors);
+		enum Color	getColor(unsigned int pos) const; // read-only, as setColor should be used in this case
+		enum Color	*getColors(void);
+		void    setColor(unsigned int pos, enum Color colors);
 };
 
 # endif

@@ -6,13 +6,14 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:26 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 17:01:59 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 17:16:41 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DICTIONARY_HPP
 # define DICTIONARY_HPP
 
+# include <iostream>
 # include <list>
 
 # include "Word.hpp"
