@@ -2,7 +2,7 @@ Class Orchestror
 init()
 generate_word()
 play() {while(...){player::read_input}}
-parse(filename) -> Dictionary::Parse
+parse(filename) -> Dictionary::Parse || EDIT : le parse se fait dans le init
 
 Class Player
 Word current_word
