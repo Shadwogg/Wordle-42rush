@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:26 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 17:47:37 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/15 18:25:20 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dictionary
 {
 	private :
 		// For now, we use an list as it is the simplest container
-		std::list<Word> dict;
+		std::list<Word *> _dict;
 		std::string _filename;
 
 	public :
@@ -32,6 +32,9 @@ class Dictionary
 		~Dictionary(void);
 
 		int	parse(void);
+
+		// Returns true if the word is in the dictionary
+		bool	doesWordExists(Word x);
 };
 
 # endif
