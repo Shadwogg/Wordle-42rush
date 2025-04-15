@@ -13,7 +13,23 @@
 #include "Orchestror.hpp"
 #include "main.hpp"
 
-int	main(void)
+
+void test_word(void)
+{
+	std::cout << "Testing class Word" << std::endl;
+	Word test("sasdrgbtdgword");
+	std::cout << test.getWord() << std::endl;
+	std::cout << test.getColor(0) << std::endl;
+}
+
+void test_dictionary(void)
+{
+	std::cout << "Testing class Dictionary" << std::endl;
+	Dictionary t("words.txt");
+	t.parse();
+}
+
+void test_orchestror(void)
 {
 	Orchestror	orchestror;
 	int			num_words;
@@ -30,5 +46,13 @@ int	main(void)
 	std::cout << "num_words in file : " << num_words << std::endl;
 	std::cout << "    random number : " << random_number << std::endl;
 	std::cout << "      chosen_word : " << chosen_word  << std::endl;
+}
+
+int	main(void)
+{
+  // test_orchestror();
+
+	// test_word();
+	// test_dictionary();
 	return (0);
 }
