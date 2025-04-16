@@ -4,9 +4,9 @@
 TerminalView::TerminalView() {}
 TerminalView::~TerminalView() {}
 
-void TerminalView::print_table(std::list<Word*> l)
+void TerminalView::print_table(std::set<Word*> l)
 {
-	for (std::list<Word*>::iterator it = l.begin();it != l.end();it++)
+	for (std::set<Word*>::iterator it = l.begin();it != l.end();it++)
 	{
 		print_word(*it);
 	}

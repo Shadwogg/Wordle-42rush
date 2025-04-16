@@ -4,6 +4,7 @@
 #include "main.hpp"
 # include "Player.hpp"
 # include "AView.hpp"
+# include <set>
 
 class TerminalView : public AView{
 	private:
