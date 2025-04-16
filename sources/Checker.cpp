@@ -16,7 +16,7 @@ bool Checker::is_word_valid_exist(const std::string curr_word)
 		if (!isalpha(curr_word[i]))
 			return false;
 	}
-	return false;
+	return true;
 }
 
 bool Checker::is_word_valid(const std::string curr_word)
