@@ -1,5 +1,16 @@
-#include "../includes/Player.hpp"
-#include "../includes/Checker.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 16:34:14 by lahlsweh          #+#    #+#             */
+/*   Updated: 2025/04/15 19:54:29 by ggiboury         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Orchestror.hpp"
 #include "main.hpp"
 #include "TerminalView.hpp"
 
@@ -11,12 +22,6 @@ void test_word(void)
 	std::cout << test.getColor(0) << std::endl;
 }
 
-void test_dictionary(void)
-{
-	std::cout << "Testing class Dictionary" << std::endl;
-	Dictionary t("words.txt");
-	t.parse();
-}
 
 void test_orchestror(void)
 {
@@ -29,8 +34,7 @@ void test_orchestror(void)
 	if (num_words == -1)
 		return ;
 	
-	random_number = orchestror.generate_number(num_words);
-	chosen_word = orchestror.generate_word(WORDS_FILEPATH, random_number);
+	random_number = orchestror.generate_number();
 
 	std::cout << "num_words in file : " << num_words << std::endl;
 	std::cout << "    random number : " << random_number << std::endl;
@@ -39,21 +43,9 @@ void test_orchestror(void)
 
 int	main(void)
 {
-	Player p;
-	Word actual("salut");
+	Orchestror	orchestror;
 
-	for (int i = 0; i < 6; i++)
-	{
-		if (p.read_input() == -1)
-			return -1;
-		if (Checker::is_answer_found(p.getCurrentWord(), actual))
-		{
-			std::cout << "You just found the word: " << actual.getWord() << std::endl;
-			break;
-		}
-	}
-
-	TerminalView t;
-	t.print_table(p.getTestedWords());
+	if (!orchestror.init(WORDS_FILEPATH))
+		orchestror.play();
 	return (0);
 }

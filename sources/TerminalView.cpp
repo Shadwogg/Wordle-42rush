@@ -1,6 +1,8 @@
 #include "TerminalView.hpp"
 
+
 TerminalView::TerminalView() {}
+TerminalView::~TerminalView() {}
 
 void TerminalView::print_table(std::list<Word*> l)
 {
@@ -10,7 +12,7 @@ void TerminalView::print_table(std::list<Word*> l)
 	}
 }
 
-void TerminalView::print_word(Word *w)
+int TerminalView::print_word(Word *w)
 {
 	std::string s = w->getWord();
 	Color c;
@@ -25,4 +27,16 @@ void TerminalView::print_word(Word *w)
 			std::cout << s[i];
 	}
 	std::cout << std::endl;
+	return 0;
 }
+
+int TerminalView::present(void)
+{
+	return 0;
+}
+
+int TerminalView::printVictory(void)
+{
+	return 0;
+}
+

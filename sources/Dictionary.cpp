@@ -3,55 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   Dictionary.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 19:37:16 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/15 21:04:58 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Dictionary.hpp"
 # include "Player.hpp"
 
-Dictionary::Dictionary(std::string filename) : _filename(filename){
-	std::cout << "Init with " << filename << std::endl;
-}
+Dictionary::Dictionary()
+{}
 
 Dictionary::~Dictionary(void)
 {
+}
 
+// Assumes pos is valid
+Word	Dictionary::getWord(unsigned int pos)
+{
+	std::set<Word>::iterator begin(_dict.begin()), end(_dict.end());
+	while (pos > 0 && begin != end)
+	{
+		pos--;
+		begin++;
+	}
+	// if (begin == end) => err
+	return (*begin);
+}
+
+unsigned int	Dictionary::getSize(void) const
+{
+	return (_dict.size());
 }
 
 /**
-	File already is present.
-	Now we have to check if the file only has empty lines or words of size 5
+	Now we have to check if the file only has words of size 5
  */
-int	Dictionary::parse(void)
+int	Dictionary::parse(std::ifstream &file)
 {
-	std::ifstream file(_filename);
+	std::string	line;
 
-	if (!file.is_open())
-	{
-		std::cerr << "Error while opening dictionary file" << std::endl;
-		return (-1);
-	}
 	int x = 0;
-	std::string line;
 	while (getline(file, line))
 	{
 		if (Checker::is_word_valid(line))
-			_dict.push_back(new Word(line));
+			_dict.insert(Word(line));
 		else{
 			std::cerr << "Error, line" << x << " not valid" << std::endl;
+			file.close();
 			return (-1);
 		}
-		x++;
 	}
-	std::cout << "Number of line parsed: " << x << std::endl;
+	file.close();
 	return (0);
 }
 
-bool	Dictionary::doesWordExists(Word x){
-	(void)x;
-	return (false);
+bool	Dictionary::doesWordExists(Word x)
+{
+	return (_dict.find(x) != _dict.end());
 }

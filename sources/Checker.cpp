@@ -66,3 +66,15 @@ bool Checker::find_char(int position, std::string s1, std::string s2)
 		return true;
 	return false;
 }
+
+bool Checker::is_word_valid(const std::string curr_word)
+{
+	if (curr_word.size() != 5)
+		return false;
+	for(int i = 0; i < 5; i++)
+	{
+		if (!isalpha(curr_word[i]))
+			return false;
+	}
+	return true;
+}

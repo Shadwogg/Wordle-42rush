@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Word.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:55:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 18:24:41 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 11:50:33 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Grey : Wrong letter
 */
 enum Color {EMPTY = 0, GREEN, YELLOW, GREY};
 
-
 class Word
 {
 	private:
@@ -33,13 +32,21 @@ class Word
 	public:
 		Word(void);
 		Word(std::string);
+		Word(Word const &);
 		~Word(void);
-			
+
+		// Word const	&operator=(Word const &);
+
+		bool	operator==(const Word &rhs);
+		// bool	operator<(const Word &rhs);
+
 		std::string const &getWord(void) const;
 
 		enum Color	getColor(unsigned int pos) const; // read-only, as setColor should be used in this case
 		enum Color	*getColors(void);
 		void    setColor(unsigned int pos, enum Color colors);
 };
+
+bool	operator<(const Word &lhs, const Word &rhs);
 
 # endif

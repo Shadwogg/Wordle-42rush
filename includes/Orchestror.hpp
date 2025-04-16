@@ -6,19 +6,26 @@
 # include <chrono>
 # include "main.hpp"
 
+# include "Player.hpp"
+# include "Dictionary.hpp"
+# include "AView.hpp"
+# include "TerminalView.hpp"
+# include "GUIView.hpp"
+
 class Orchestror
 {
-private:
+	private:
+		Player	_p;
+		Dictionary _d;
 
-public:
-	Orchestror(void);
-	~Orchestror(void);
+	public:
+		Orchestror(void);
+		~Orchestror(void);
 	
-	int			init(std::string filepath);
-	int			generate_number(unsigned int max);
-	std::string	generate_word(std::string filepath, int num_line);
-	//void		play(void);
-	//void		parse(void);
+		int		init(std::string filepath);
+		int		generate_number(void);
+		Word	generate_word(void);
+		int		play(void);
 };
 
 #endif
