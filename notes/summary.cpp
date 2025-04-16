@@ -6,7 +6,7 @@
 /*   By: lahlsweh <lahlsweh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 10:23:50 by lahlsweh          #+#    #+#             */
-/*   Updated: 2025/04/16 10:45:07 by lahlsweh         ###   ########.fr       */
+/*   Updated: 2025/04/16 10:46:56 by lahlsweh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Dictionary;
 class Orchestror;
 class Player;
 class Word;
+class TerminalView;
 
 class AView
 {
