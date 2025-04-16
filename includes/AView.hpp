@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AView.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 20:55:49 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 13:45:51 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:54:47 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define AVIEW_HPP
 
 # include "Word.hpp"
-
+# include <list>
 
 class AView
 {
@@ -24,7 +24,9 @@ class AView
 
 		virtual int	present(void) = 0;
 		virtual int	print_word(Word *w) = 0;
-		virtual int	printVictory(void) = 0;
+		virtual int	printVictory(int attempts) = 0;
+		virtual int printFailure(std::string word) = 0;
+		virtual int print_table(std::list<Word*> l) = 0;
 };
 
 #endif

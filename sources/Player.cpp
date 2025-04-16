@@ -16,16 +16,17 @@ int Player::read_input()
 {
 	std::string user_info;
 
+	std::cout << "input: "; 
 	while (std::getline(std::cin, user_info))
 	{
-		if (Checker::is_word_valid(user_info))
+		if (Checker::is_word_valid_exist(user_info))
 		{
 			_current_word = new Word(user_info);
 			_tested_words.push_back(_current_word);
 			return 0;
 		}
-		else
-			std::cout << "ERROR" << std::endl;
+		std::cout << "ERROR" << std::endl;
+		std::cout << "input: "; 
 	}
 	return -1;
 }

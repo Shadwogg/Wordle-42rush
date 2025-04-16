@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   GUIView.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:18:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 12:36:16 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:55:19 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,22 @@ int GUIView::present(void)
 	return 0;
 }
 
-int GUIView::printVictory(void)
+int GUIView::printVictory(int attempts)
 {
+	(void)attempts;
+	return 0;
+}
+
+int GUIView::printFailure(std::string word)
+{
+	(void)word;
+	return 0;
+}
+
+
+int GUIView::print_table(std::list<Word*> l)
+{
+	(void)l;
 	return 0;
 }
 

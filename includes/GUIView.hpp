@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   GUIView.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:05:05 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 13:21:11 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:55:33 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ class GUIView : public AView
 		virtual ~GUIView(void);
 
 		int	present(void);
-		int	printVictory(void);
+		int	printVictory(int attempts);
+		int printFailure(std::string word);
 		int	print_word(Word *w);
+		int print_table(std::list<Word*> l);
 		// int	print_word(Word *w);
 };
 
