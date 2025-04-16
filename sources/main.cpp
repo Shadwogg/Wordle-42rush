@@ -38,7 +38,6 @@ void test_orchestror(void)
 		return ;
 	
 	random_number = orchestror.generate_number();
-	chosen_word = orchestror.generate_word(WORDS_FILEPATH, random_number);
 
 	std::cout << "num_words in file : " << num_words << std::endl;
 	std::cout << "    random number : " << random_number << std::endl;
@@ -47,16 +46,11 @@ void test_orchestror(void)
 
 int	main(void)
 {
-	Player p;
-	Word actual("bonjo");
-	if (p.read_input() == -1)
-		return -1;
-	if (Checker::is_answer_found(p.getCurrentWord(), actual))
-		std::cout << "YEAH" << std::endl;
+	Orchestror	orchestror;
 
-  test_orchestror();
-
-	test_word();
-
+	// test_orchestror();
+	if (!orchestror.init(WORDS_FILEPATH))
+		orchestror.play();
+		;
 	return (0);
 }

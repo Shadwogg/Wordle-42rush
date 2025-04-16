@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Word.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:55:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 18:58:14 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:50:33 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ class Word
 	public:
 		Word(void);
 		Word(std::string);
+		Word(Word const &);
 		~Word(void);
+
+		// Word const	&operator=(Word const &);
 
 		bool	operator==(const Word &rhs);
 		// bool	operator<(const Word &rhs);

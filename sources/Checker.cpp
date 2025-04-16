@@ -6,3 +6,15 @@ bool Checker::is_answer_found(Word* word1, Word word2)
 		return true;
 	return false;
 }
+
+bool Checker::is_word_valid(const std::string curr_word)
+{
+	if (curr_word.size() != 5)
+		return false;
+	for(int i = 0; i < 5; i++)
+	{
+		if (!isalpha(curr_word[i]))
+			return false;
+	}
+	return true;
+}

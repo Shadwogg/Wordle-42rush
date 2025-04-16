@@ -1,17 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Orchestror.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 21:05:25 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/04/16 13:48:45 by ggiboury         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Orchestror.hpp"
 
 Orchestror::Orchestror(void)
 {
-	return ;
 }
 
 Orchestror::~Orchestror(void)
 {
-	return ;
 }
 
 // Parse the input and initialize everything
-int			Orchestror::init(std::string filepath)
+int	Orchestror::init(std::string filepath)
 {
 	std::ifstream	word_file(filepath);
 
@@ -23,6 +33,24 @@ int			Orchestror::init(std::string filepath)
 	return (_d.parse(word_file));
 }
 
+// #include <time.h>
+// #include <cstdlib>
+
+// int			Orchestror::generate_number(void)
+// {
+// 	time_t seconds;
+// 	seconds = time(NULL);
+// 	// seconds += (24 * 60 * 60);
+// 	unsigned long seed = seconds / (60 * 60 * 24);
+// 	std::cout << seed << "for " << std::rand() << std::endl;
+
+//     std::minstd_rand					generator(seed);
+//     std::uniform_int_distribution<int>	distribution(0, _d.getSize());
+// 	// std::cout << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;
+
+//     return distribution(generator);
+// }
+
 int			Orchestror::generate_number(void)
 {
     unsigned long						seed = std::chrono::system_clock::now().time_since_epoch().count();
@@ -32,47 +60,41 @@ int			Orchestror::generate_number(void)
     return distribution(generator);
 }
 
-std::string	Orchestror::generate_word(std::string filepath, int num_line)
+Word	Orchestror::generate_word(void)
 {
-	std::ifstream	word_file(filepath);
-	std::string		line;
-	int				num_words;
-	std::string		chosen_word;
-
-	if (!word_file)
-	{
-		std::cerr << "Error opening file." << std::endl;
-		return (chosen_word);
-	}
-	num_words = 0;
-	while (std::getline(word_file, line) && num_words < num_line - 1)
-	{
-		if (line.length() != WORD_LENGTH)
-		{
-			std::cerr << "Error: bad file format" << std::endl;
-			return (chosen_word);
-		}
-		for (int i = 0; i < WORD_LENGTH; i++)
-		{
-			if (!std::isalpha(line[i]))
-			{
-				std::cerr << "Error: bad file format" << std::endl;
-				return (chosen_word);
-			}
-		}
-		num_words++;
-	} 
-	chosen_word = line;
-	word_file.close();
-	return (chosen_word);
+	// Maybe we should add things here, # subject to read again to be sure (same word for a day ?)
+	return (_d.getWord(this->generate_number()));
 }
 
-/*void		Orchestror::play(void)
+int		Orchestror::play(void)
 {
-	return ;
-}*/
+	AView	*currentView;
 
-/*void		Orchestror::parse(void)
-{
-	return ;
-}*/
+	// Selection du mode, par defaut terminalView
+	// NORMALEMENT JE DEVRAIS LE METTRE DAMS LE CONSTRUCTOR
+	if (0)
+		currentView = new GUIView();
+	else
+		currentView = new TerminalView();
+
+	std::cout << "(debug) Debut jeu" << std::endl;
+
+	currentView->present();
+	Word	goal_word(this->generate_word());
+	std::cout << "Triche :" << goal_word.getWord() << std::endl;
+	while (true)
+	{
+		if (_p.read_input() == -1) // until valid word
+			return (-1); // NOT SURE ABOUT THIS, WE SHOULD DELETE BEFORE ?
+		if (Checker::is_answer_found(_p.getCurrentWord(), goal_word))
+		{
+			currentView->printVictory();
+			break ;
+		}
+		else
+			currentView->print_word(_p.getCurrentWord());
+	}
+	std::cout << "(debug) FIN JEU" << std::endl;
+
+	return (0);
+}
