@@ -17,6 +17,7 @@ class Player {
 		int read_input();
 		Word* getCurrentWord();
 		std::list <Word*> getTestedWords();
+		void addTestedWord(Word* w);
 };
 
 #endif

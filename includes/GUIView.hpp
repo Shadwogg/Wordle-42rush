@@ -6,7 +6,7 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:05:05 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 14:55:33 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 18:08:38 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class GUIView : public AView
 		GUIView(void);
 		virtual ~GUIView(void);
 
-		int	present(void);
+		int	present(int nb_word);
 		int	printVictory(int attempts);
 		int printFailure(std::string word);
 		int	print_word(Word *w);

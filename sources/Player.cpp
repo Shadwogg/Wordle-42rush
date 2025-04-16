@@ -19,13 +19,12 @@ int Player::read_input()
 	std::cout << "input: "; 
 	while (std::getline(std::cin, user_info))
 	{
-		if (Checker::is_word_valid_exist(user_info))
+		if (Checker::is_word_valid(user_info))
 		{
 			_current_word = new Word(user_info);
-			_tested_words.push_back(_current_word);
 			return 0;
 		}
-		std::cout << "ERROR" << std::endl;
+		std::cout << "Word must be 5 alphabetic letters!" << std::endl;
 		std::cout << "input: "; 
 	}
 	return -1;
@@ -40,4 +39,15 @@ Word* Player::getCurrentWord()
 std::list <Word*> Player::getTestedWords()
 {
 	return (_tested_words);
+}
+
+// int Player::setDictionary(Dictionary d)
+// {
+// 	_d = d;
+// 	return 0;
+// }
+
+void Player::addTestedWord(Word* w)
+{
+	_tested_words.push_back(w);
 }

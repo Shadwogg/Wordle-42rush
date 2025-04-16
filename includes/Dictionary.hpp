@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dictionary.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:26 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 20:19:44 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:46:20 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Dictionary
 		unsigned int	getSize(void) const;
 
 		// Returns true if the word is in the dictionary
-		bool	doesWordExists(Word x);
+		bool	doesWordExists(Word *x);
 
 		int	parse(std::ifstream &file);
 

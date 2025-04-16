@@ -6,7 +6,7 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:18:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 14:55:19 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 18:08:56 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 GUIView::GUIView(void) {}
 GUIView::~GUIView(void) {}
 
-int GUIView::present(void)
+int GUIView::present(int nb_word)
 {
+	(void)nb_word;
 	return 0;
 }
 

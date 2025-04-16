@@ -14,7 +14,6 @@ class Checker {
 		public:
 		static bool is_answer_found(Word* word1, Word word2);
 		static bool is_word_valid(std::string curr_word);
-		static bool is_word_valid_exist(const std::string curr_word);
 		static void find_colours(Word* word1, Word word2);
 
 };

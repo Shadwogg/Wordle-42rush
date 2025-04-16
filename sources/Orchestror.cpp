@@ -6,7 +6,7 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 21:05:25 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 15:04:57 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 18:11:52 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,29 +78,31 @@ int		Orchestror::play(void)
 		currentView = new TerminalView();
 
 	std::cout << "(debug) Debut jeu" << std::endl;
-
-	std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
-	std::cout << "░██╗░░░░░░░██╗░█████╗░██████╗░██████╗░██╗░░░░░███████╗░" << std::endl;
-	std::cout << "░██║░░██╗░░██║██╔══██╗██╔══██╗██╔══██╗██║░░░░░██╔════╝░" << std::endl;
-	std::cout << "░╚██╗████╗██╔╝██║░░██║██████╔╝██║░░██║██║░░░░░█████╗░░░" << std::endl;
-	std::cout << "░░████╔═████║░██║░░██║██╔══██╗██║░░██║██║░░░░░██╔══╝░░░" << std::endl;
-	std::cout << "░░╚██╔╝░╚██╔╝░╚█████╔╝██║░░██║██████╔╝███████╗███████╗░" << std::endl;
-	std::cout << "░░░╚═╝░░░╚═╝░░░╚════╝░╚═╝░░╚═╝╚═════╝░╚══════╝╚══════╝░" << std::endl;
-	std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl << std::endl;
-
-	std::cout << "Total words available: " << _d.getSize() << std::endl << std::endl;
 	
-	currentView->present();
+	currentView->present(_d.getSize());
+	std::cout << std::endl;
+
 	Word	goal_word(this->generate_word());
-	std::cout << "Triche :" << goal_word.getWord() << std::endl;
+	// std::cout << "Triche :" << goal_word.getWord() << std::endl;
 	currentView->print_table(_p.getTestedWords());
 
 	for(int i = 0; i < 6; i++)
 	{
-		if (_p.read_input() == -1) // until valid word
+		while (1)
 		{
-			delete currentView;
-			return (-1); // NOT SURE ABOUT THIS, WE SHOULD DELETE BEFORE ?
+			if (_p.read_input() == -1) // until valid word
+			{
+				delete currentView;
+				return (-1); // NOT SURE ABOUT THIS, WE SHOULD DELETE BEFORE ?
+			}
+			Word *actual_word = _p.getCurrentWord();
+			if (_d.doesWordExists(actual_word))
+			{
+				_p.addTestedWord(actual_word);
+				break;
+			}
+			delete actual_word;
+			std::cout << "Word must be in dictionary!" << std::endl;
 		}
 		Checker::find_colours(_p.getCurrentWord(), goal_word);
 		currentView->print_table(_p.getTestedWords());

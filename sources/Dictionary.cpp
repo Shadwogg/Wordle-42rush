@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dictionary.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 21:04:58 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:46:13 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	Dictionary::parse(std::ifstream &file)
 	return (0);
 }
 
-bool	Dictionary::doesWordExists(Word x)
+bool	Dictionary::doesWordExists(Word *x)
 {
-	return (_dict.find(x) != _dict.end());
+	return (_dict.find(*x) != _dict.end());
 }

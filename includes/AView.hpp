@@ -6,7 +6,7 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 20:55:49 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 14:54:47 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 18:08:32 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AView
 		AView(void);
 		virtual ~AView(void) = 0;
 
-		virtual int	present(void) = 0;
+		virtual int	present(int nb_word) = 0;
 		virtual int	print_word(Word *w) = 0;
 		virtual int	printVictory(int attempts) = 0;
 		virtual int printFailure(std::string word) = 0;
