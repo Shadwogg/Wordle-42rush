@@ -43,13 +43,43 @@ int			Orchestror::init(std::string filepath)
 	return (num_words);
 }
 
-int			Orchestror::generate_number(unsigned int max)
+/*
+int	Orchestror::generate_number(unsigned int max)
 {
-    unsigned long						seed = std::chrono::system_clock::now().time_since_epoch().count();
-    std::minstd_rand					generator(seed);
-    std::uniform_int_distribution<int>	distribution(0, max);
+	std::chrono::system_clock::time_point	now = std::chrono::system_clock::now();
+	std::chrono::system_clock::duration		since_epoch = now.time_since_epoch();
+	int	days_since_epoch = std::chrono::duration_cast<std::chrono::duration<int, std::ratio<86400>>>(since_epoch).count();
+	days_since_epoch += 3;
+	std::cout << days_since_epoch << std::endl;
+	std::minstd_rand						rng(days_since_epoch);
+	std::uniform_int_distribution<int>		dist(0, max);
 
-    return distribution(generator);
+	return (dist(rng));
+}
+*/
+
+/*int	Orchestror::generate_number(unsigned int max)
+{
+	unsigned long	seed = std::chrono::system_clock::now().time_since_epoch().count();
+
+	std::cout << "seed: " << seed << std::endl;
+	std::minstd_rand					generator(seed);
+	std::uniform_int_distribution<int>	distribution(0, max);
+
+	return (distribution(generator));
+}*/
+
+int Orchestror::generate_number(unsigned int max)
+{
+	auto								now = std::chrono::system_clock::now();
+	std::time_t							now_time = std::chrono::system_clock::to_time_t(now);
+	std::tm*							now_tm = std::localtime(&now_time);
+	unsigned int						seed = (now_tm->tm_year + 1900) * 10000 + (now_tm->tm_mon + 1) * 100 + now_tm->tm_mday;
+	seed += 3;
+	std::cout << "seed: " << seed << std::endl;
+	std::mt19937						generator(seed);
+	std::uniform_int_distribution<int>	distribution(0, max);
+	return (distribution(generator));
 }
 
 std::string	Orchestror::generate_word(std::string filepath, int num_line)
