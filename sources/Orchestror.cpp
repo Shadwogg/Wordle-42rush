@@ -6,7 +6,7 @@
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 21:05:25 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/15 21:24:50 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:48:45 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,24 @@ int	Orchestror::init(std::string filepath)
 	return (_d.parse(word_file));
 }
 
+// #include <time.h>
+// #include <cstdlib>
+
+// int			Orchestror::generate_number(void)
+// {
+// 	time_t seconds;
+// 	seconds = time(NULL);
+// 	// seconds += (24 * 60 * 60);
+// 	unsigned long seed = seconds / (60 * 60 * 24);
+// 	std::cout << seed << "for " << std::rand() << std::endl;
+
+//     std::minstd_rand					generator(seed);
+//     std::uniform_int_distribution<int>	distribution(0, _d.getSize());
+// 	// std::cout << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;
+
+//     return distribution(generator);
+// }
+
 int			Orchestror::generate_number(void)
 {
     unsigned long						seed = std::chrono::system_clock::now().time_since_epoch().count();
@@ -42,16 +60,15 @@ int			Orchestror::generate_number(void)
     return distribution(generator);
 }
 
-std::string	Orchestror::generate_word()
+Word	Orchestror::generate_word(void)
 {
 	// Maybe we should add things here, # subject to read again to be sure (same word for a day ?)
-	return (getWord(this.generate_number()));
+	return (_d.getWord(this->generate_number()));
 }
 
 int		Orchestror::play(void)
 {
 	AView	*currentView;
-	Word	goal_word;
 
 	// Selection du mode, par defaut terminalView
 	// NORMALEMENT JE DEVRAIS LE METTRE DAMS LE CONSTRUCTOR
@@ -62,20 +79,20 @@ int		Orchestror::play(void)
 
 	std::cout << "(debug) Debut jeu" << std::endl;
 
-	// while (Player.isPlaying())
+	currentView->present();
+	Word	goal_word(this->generate_word());
+	std::cout << "Triche :" << goal_word.getWord() << std::endl;
 	while (true)
 	{
-		currentView.present();
-		goal_word = this->generate_word();
-		while (true)
+		if (_p.read_input() == -1) // until valid word
+			return (-1); // NOT SURE ABOUT THIS, WE SHOULD DELETE BEFORE ?
+		if (Checker::is_answer_found(_p.getCurrentWord(), goal_word))
 		{
-			if (_p.read_input() == -1) // until valid word
-				return (-1); // NOT SURE ABOUT THIS, WE SHOULD DELETE BEFORE ?
-			if (Checker::is_answer_found(_p.getCurrentWord(), goal_word))
-				currentView.printVictory();
-			else
-				currentView.printTable();
+			currentView->printVictory();
+			break ;
 		}
+		else
+			currentView->print_word(_p.getCurrentWord());
 	}
 	std::cout << "(debug) FIN JEU" << std::endl;
 

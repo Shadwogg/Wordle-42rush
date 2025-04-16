@@ -38,7 +38,6 @@ void test_orchestror(void)
 		return ;
 	
 	random_number = orchestror.generate_number();
-	chosen_word = orchestror.generate_word(WORDS_FILEPATH, random_number);
 
 	std::cout << "num_words in file : " << num_words << std::endl;
 	std::cout << "    random number : " << random_number << std::endl;
@@ -47,11 +46,11 @@ void test_orchestror(void)
 
 int	main(void)
 {
-	std::cout << "The game offers only one word per day, the same for all players, allowing people to compare their results on social media." << std::endl;
-
 	Orchestror	orchestror;
 
+	// test_orchestror();
 	if (!orchestror.init(WORDS_FILEPATH))
 		orchestror.play();
+		;
 	return (0);
 }

@@ -1,16 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AView.cpp                                          :+:      :+:    :+:   */
+/*   GUIView.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 20:55:52 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 12:54:10 by ggiboury         ###   ########.fr       */
+/*   Created: 2025/04/16 12:05:05 by ggiboury          #+#    #+#             */
+/*   Updated: 2025/04/16 13:21:11 by ggiboury         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AView.hpp"
+#ifndef GUIVIEW_HPP
+# define GUIVIEW_HPP
 
-AView::AView(void){}
-AView::~AView(void){}
+# include "AView.hpp"
+# include "Word.hpp"
+
+
+class GUIView : public AView
+{
+	private :
+		
+	public :
+		GUIView(void);
+		virtual ~GUIView(void);
+
+		int	present(void);
+		int	printVictory(void);
+		int	print_word(Word *w);
+		// int	print_word(Word *w);
+};
+
+#endif
