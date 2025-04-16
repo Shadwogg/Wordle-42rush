@@ -4,18 +4,19 @@
 # include <iostream>
 # include <list>
 # include "Word.hpp"
+# include "Checker.hpp"
 
 class Player {
 	private:
 		Word* _current_word;
-		std::list <std::string> _tested_words;
+		std::list <Word*> _tested_words;
 		std::list <std::string> _found_words;
 	public:
 		Player();
 		virtual ~Player();
 		int read_input();
-		static bool is_word_valid(std::string curr_word);
 		Word* getCurrentWord();
+		std::list <Word*> getTestedWords();
 };
 
 #endif

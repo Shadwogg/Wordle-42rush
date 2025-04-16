@@ -39,3 +39,4 @@ int TerminalView::printVictory(void)
 {
 	return 0;
 }
+

@@ -11,7 +11,7 @@ class TerminalView : public AView{
 	public:
 		TerminalView();
 		~TerminalView();
-		void print_table(std::list<Word*> l);
+		void print_table(std::set<Word*> l);
 		int print_word(Word *w);
 		int	present(void);
 		int	printVictory(void);

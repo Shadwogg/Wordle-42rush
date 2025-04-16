@@ -1,7 +1,3 @@
-
-#include "../includes/Player.hpp"
-#include "../includes/Checker.hpp"
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -16,6 +12,7 @@
 
 #include "Orchestror.hpp"
 #include "main.hpp"
+#include "TerminalView.hpp"
 
 void test_word(void)
 {
@@ -48,9 +45,7 @@ int	main(void)
 {
 	Orchestror	orchestror;
 
-	// test_orchestror();
 	if (!orchestror.init(WORDS_FILEPATH))
 		orchestror.play();
-		;
 	return (0);
 }

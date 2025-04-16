@@ -18,7 +18,6 @@ Dictionary::Dictionary()
 
 Dictionary::~Dictionary(void)
 {
-
 }
 
 // Assumes pos is valid
