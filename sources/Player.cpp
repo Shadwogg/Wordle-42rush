@@ -7,9 +7,7 @@ Player::Player() : _current_word(NULL)
 Player::~Player()
 {
 	for (std::list<Word*>::iterator it = _tested_words.begin();it != _tested_words.end();it++)
-	{
 		delete *it;
-	}
 }
 
 int Player::read_input()
@@ -40,12 +38,6 @@ std::list <Word*> Player::getTestedWords()
 {
 	return (_tested_words);
 }
-
-// int Player::setDictionary(Dictionary d)
-// {
-// 	_d = d;
-// 	return 0;
-// }
 
 void Player::addTestedWord(Word* w)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Word.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:29:47 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 12:02:31 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:42:06 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@ Word::Word(const Word &word) : _word(word.getWord())
 
 Word::~Word(void)
 {}
-
-// Word const	&Word::operator=(Word const &)
-// {
-// 	if (this == &rhs)
-// 		return (*this)
-// 	return (*this);
-// }
-
 
 bool	Word::operator==(const Word &rhs)
 {

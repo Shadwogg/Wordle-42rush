@@ -14,6 +14,7 @@ class Player {
 	public:
 		Player();
 		virtual ~Player();
+
 		int read_input();
 		Word* getCurrentWord();
 		std::list <Word*> getTestedWords();

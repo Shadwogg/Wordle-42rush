@@ -6,15 +6,15 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 20:55:49 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 18:08:32 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 18:40:53 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AVIEW_HPP
 # define AVIEW_HPP
 
-# include "Word.hpp"
 # include <list>
+# include "Word.hpp"
 
 class AView
 {

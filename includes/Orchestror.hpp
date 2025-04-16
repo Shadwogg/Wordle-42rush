@@ -17,11 +17,10 @@ class Orchestror
 	private:
 		Player	_p;
 		Dictionary _d;
-
 	public:
 		Orchestror(void);
 		~Orchestror(void);
-	
+
 		int		init(std::string filepath);
 		int		generate_number(void);
 		Word	generate_word(void);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Word.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggiboury <ggiboury@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:55:14 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 11:50:33 by ggiboury         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:42:52 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,12 @@ class Word
 		Word(Word const &);
 		~Word(void);
 
-		// Word const	&operator=(Word const &);
-
 		bool	operator==(const Word &rhs);
-		// bool	operator<(const Word &rhs);
-
 		std::string const &getWord(void) const;
 
-		enum Color	getColor(unsigned int pos) const; // read-only, as setColor should be used in this case
+		enum Color	getColor(unsigned int pos) const;
 		enum Color	*getColors(void);
-		void    setColor(unsigned int pos, enum Color colors);
+		void    setColor(unsigned int pos, enum Color new_color);
 };
 
 bool	operator<(const Word &lhs, const Word &rhs);

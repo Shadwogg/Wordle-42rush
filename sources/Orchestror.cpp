@@ -6,7 +6,7 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 21:05:25 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 18:11:52 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 18:43:52 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,10 @@ int		Orchestror::play(void)
 	{
 		while (1)
 		{
-			if (_p.read_input() == -1) // until valid word
+			if (_p.read_input() == -1)
 			{
 				delete currentView;
-				return (-1); // NOT SURE ABOUT THIS, WE SHOULD DELETE BEFORE ?
+				return (-1);
 			}
 			Word *actual_word = _p.getCurrentWord();
 			if (_d.doesWordExists(actual_word))
@@ -109,14 +109,13 @@ int		Orchestror::play(void)
 		if (Checker::is_answer_found(_p.getCurrentWord(), goal_word))
 		{
 			currentView->printVictory(i + 1);
-			break ;
+			delete currentView;
+			return 0;
 		}
-		if (i == 5)
-			currentView->printFailure(goal_word.getWord());
 	}
-	delete currentView;
 	
-	std::cout << "(debug) FIN JEU" << std::endl;
+	currentView->printFailure(goal_word.getWord());
+	delete currentView;
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lsaiti <lsaiti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:44:28 by ggiboury          #+#    #+#             */
-/*   Updated: 2025/04/16 17:46:13 by lsaiti           ###   ########.fr       */
+/*   Updated: 2025/04/16 18:43:18 by lsaiti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ unsigned int	Dictionary::getSize(void) const
 	return (_dict.size());
 }
 
-/**
-	Now we have to check if the file only has words of size 5
- */
 int	Dictionary::parse(std::ifstream &file)
 {
 	std::string	line;
